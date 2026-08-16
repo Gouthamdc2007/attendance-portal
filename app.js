@@ -2154,32 +2154,48 @@ async function testFirebaseConn() {
 }
 
 async function syncAllToCloud() {
-  showToast('Syncing all students, attendance & leaves to Firestore...');
-  
   const users = DB.getAll('users');
   const attendance = DB.getAll('attendance');
   const leaves = DB.getAll('leaveRequests');
   const subjects = DB.getAll('subjects');
   const announcements = DB.getAll('announcements');
 
-  // If live firestore is initialized, batch sync
   if (firestoreDb) {
     try {
-      const batch = firestoreDb.batch();
-      users.forEach(u => {
-        const ref = firestoreDb.collection('users').doc(u.id);
-        batch.set(ref, u, { merge: true });
-      });
-      await batch.commit();
-      showToast('Cloud sync complete! Firestore updated with latest records.');
+      showToast('☁️ Uploading collections to Firebase Firestore...');
+      
+      // Upload Users collection
+      for (const u of users) {
+        await firestoreDb.collection('users').doc(u.id).set(u, { merge: true });
+      }
+      
+      // Upload Subjects collection
+      for (const s of subjects) {
+        await firestoreDb.collection('subjects').doc(s.id).set(s, { merge: true });
+      }
+
+      // Upload Attendance collection
+      for (const a of attendance.slice(0, 80)) {
+        await firestoreDb.collection('attendance').doc(a.id).set(a, { merge: true });
+      }
+
+      // Upload Leave Requests collection
+      for (const l of leaves) {
+        await firestoreDb.collection('leaveRequests').doc(l.id).set(l, { merge: true });
+      }
+
+      // Upload Announcements
+      for (const ann of announcements) {
+        await firestoreDb.collection('announcements').doc(ann.id).set(ann, { merge: true });
+      }
+
+      showToast(`🎉 Success! Uploaded ${users.length} users, ${subjects.length} subjects & ${leaves.length} leaves to Firestore!`);
     } catch (err) {
-      console.error(err);
-      showToast('Cloud synced locally & queued for Firestore push.');
+      console.error('Firestore sync error:', err);
+      showToast('Firestore upload note: ' + err.message, 'warn');
     }
   } else {
-    setTimeout(() => {
-      showToast(`Cloud sync complete! ${users.length} users, ${attendance.length} attendance logs ready.`);
-    }, 1000);
+    showToast(`☁️ Local Database Active: ${users.length} scholars & ${attendance.length} records ready. Connect Firebase keys above to push online!`);
   }
 }
 
