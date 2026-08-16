@@ -1,0 +1,11 @@
+# Dependencies & Cache
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel/
+.firebase/
+*.log
+
+# Env & Secrets
+.env
+.env.local

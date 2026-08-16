@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "ssn-student-attendance-portal",
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
