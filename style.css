@@ -391,8 +391,8 @@ textarea, input, select {
 /* ═══════════════════ HERO SECTION ═══════════════════ */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba(0, 24, 51, 0.88) 0%, rgba(0, 34, 68, 0.82) 50%, rgba(0, 56, 112, 0.86) 100%),
-              url('assets/ssn_campus_bg.jpg') center center / cover no-repeat;
+  background: linear-gradient(135deg, rgba(0, 24, 51, 0.40) 0%, rgba(0, 34, 68, 0.35) 50%, rgba(0, 56, 112, 0.40) 100%),
+              url('ssn_campus_bg.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   padding-top: 72px;
@@ -678,6 +678,70 @@ textarea, input, select {
 .fc-stat-l {
   font-size: 0.68rem;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.campus-showcase-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid rgba(200, 150, 12, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  margin-bottom: 20px;
+  background: #001933;
+  position: relative;
+  transition: all var(--transition);
+}
+
+.campus-showcase-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--ssn-gold);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+}
+
+.campus-hero-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.csc-badge {
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(0, 24, 51, 0.85);
+  border-top: 1px solid rgba(200, 150, 12, 0.3);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.about-campus-box {
+  margin-top: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid var(--ssn-gold);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: #001933;
+  text-align: center;
+}
+
+.about-campus-img {
+  width: 100%;
+  max-width: 220px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-campus-box span {
+  display: block;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ssn-gold);
+  background: rgba(0, 24, 51, 0.9);
 }
 
 .fc-mini {
