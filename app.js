@@ -389,6 +389,7 @@ function renderAdminHeroBanner() {
       </button>
     </div>
   `;
+  if (typeof applyEmbeddedImages === 'function') applyEmbeddedImages();
 }
 
 function renderAdminCampusBar() {
