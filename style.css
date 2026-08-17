@@ -132,6 +132,51 @@ textarea, input, select {
   border-radius: 8px;
 }
 
+/* SSN Official Logo Image */
+.ssn-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #ffffff;
+  padding: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1.5px solid rgba(200, 150, 12, 0.4);
+  transition: all var(--transition);
+}
+
+.ssn-logo-img:hover {
+  transform: scale(1.05);
+}
+
+.ssn-logo-img.sm {
+  width: 34px;
+  height: 34px;
+  padding: 2px;
+  border-radius: 7px;
+}
+
+.ssn-logo-img.lg {
+  width: 56px;
+  height: 56px;
+  padding: 4px;
+  border-radius: 12px;
+  border: 2px solid var(--ssn-gold);
+}
+
+.about-ssn-logo {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 12px;
+  box-shadow: 0 16px 40px rgba(0, 34, 68, 0.25);
+  border: 4px solid var(--ssn-gold);
+  animation: floatCard 6s ease-in-out infinite;
+}
+
 /* ═══════════════════ BUTTONS ═══════════════════ */
 .btn-primary {
   display: inline-flex;
@@ -346,18 +391,21 @@ textarea, input, select {
 /* ═══════════════════ HERO SECTION ═══════════════════ */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--ssn-navy-deep) 0%, var(--ssn-navy-dark) 50%, #003870 100%);
+  background: linear-gradient(135deg, rgba(0, 24, 51, 0.88) 0%, rgba(0, 34, 68, 0.82) 50%, rgba(0, 56, 112, 0.86) 100%),
+              url('assets/ssn_campus_bg.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   padding-top: 72px;
   position: relative;
   overflow: hidden;
+  background-attachment: fixed;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  background: radial-gradient(circle at 80% 20%, rgba(200, 150, 12, 0.15) 0%, transparent 60%);
 }
 
 .hero-shape {
@@ -874,9 +922,12 @@ textarea, input, select {
 
 /* ═══════════════════ ABOUT STRIP ═══════════════════ */
 .about-strip {
-  background: var(--ssn-navy);
+  background: linear-gradient(135deg, rgba(0, 34, 68, 0.94) 0%, rgba(0, 51, 102, 0.90) 100%),
+              url('assets/ssn_campus_bg.jpg') center center / cover no-repeat;
   padding: 80px 0;
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-content {
@@ -1021,7 +1072,8 @@ textarea, input, select {
 
 .login-sidebar {
   width: 400px;
-  background: linear-gradient(180deg, var(--ssn-navy-deep) 0%, var(--ssn-navy-dark) 100%);
+  background: linear-gradient(180deg, rgba(0, 24, 51, 0.92) 0%, rgba(0, 34, 68, 0.95) 100%),
+              url('assets/ssn_campus_bg.jpg') center center / cover no-repeat;
   flex-shrink: 0;
   padding: 44px 36px;
   display: flex;

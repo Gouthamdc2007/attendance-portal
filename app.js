@@ -369,7 +369,7 @@ function renderAdminHeroBanner() {
 
   bannerEl.innerHTML = `
     <div class="fhp-left">
-      <div class="fhp-avatar" style="background:linear-gradient(135deg, #002244 0%, #004d80 100%);border-color:rgba(200,150,12,0.6);">SSN</div>
+      <img src="assets/ssn_logo.png" alt="SSN Crest" class="fhp-avatar-img" style="width:68px;height:68px;border-radius:12px;object-fit:contain;background:#ffffff;padding:4px;border:2px solid var(--ssn-gold);box-shadow:0 4px 12px rgba(0,0,0,0.3);" />
       <div class="fhp-details">
         <div class="fhp-badge-row">
           <span class="fhp-badge primary">Executive ID: ${u.employeeId || 'SSN-ADM-001'}</span>
